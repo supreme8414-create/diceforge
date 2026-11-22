@@ -35,9 +35,9 @@
   var canvas = document.querySelector("#unity-canvas");
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Mac/.test(navigator.platform));
   var config = {
-    dataUrl: "Build/BuildWeb.data.unityweb",
-    frameworkUrl: "Build/BuildWeb.framework.js.unityweb",
-    codeUrl: "Build/BuildWeb.wasm.unityweb",
+    dataUrl: "Build/BuildWeb.data.unityweb?v=6",
+    frameworkUrl: "Build/BuildWeb.framework.js.unityweb?v=6",
+    codeUrl: "Build/BuildWeb.wasm.unityweb?v=6",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "DefaultCompany",
     productName: "DiceForge",
@@ -63,7 +63,7 @@
   document.addEventListener("touchmove", function (e) { e.preventDefault(); }, { passive: false });
 
   var script = document.createElement("script");
-  script.src = "Build/BuildWeb.loader.js";
+  script.src = "Build/BuildWeb.loader.js?v=6";
   script.onload = function () {
     createUnityInstance(canvas, config, function (p) {
       document.querySelector("#fill").style.width = (100 * p) + "%";
